@@ -12,7 +12,7 @@ public class Artista{
         this.generoMu = genero;
 
         setDuracion(duracion);
-        setCantidadasisten(asistenres);
+        setCantidadAsistentes(asistentes);
     }
 
     public int getCodigo(){
@@ -24,7 +24,7 @@ public class Artista{
     }
 
     public String getGeneroMusical() {
-        return generoMusical;
+        return generoMu;
     }
 
     public int getDuracion(){
@@ -32,7 +32,7 @@ public class Artista{
     }
 
     public int getCantidadAsistentes(){
-        return cantidadAsist;
+        return cantidadAsisten;
     }
 
     public void setDuracion(int duracion){
@@ -42,10 +42,17 @@ public class Artista{
         this.duracion = duracion;
     }
 
+    public void setNombreArtistico(String nombre) {
+        this.nombreArt = nombre;
+    }
+
+    public void setGeneroMusical(String genero) {
+        this.generoMu = genero;
+    }
     public void setCantidadAsistentes(int asistentes){
         if(asistentes < 0){
             throw new IllegalArgumentException("No pueden ser menores a 0");
         }
-        this.asistentesv = asistentes;
+        this.cantidadAsisten = asistentes;
     }
 }

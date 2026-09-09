@@ -6,9 +6,9 @@ public class Escenario{
     private int capacidadMax;
     private boolean estado;
 
-    public Escenario(int codigo, String nombre, int capaciadadMax, boolean estado){
+    public Escenario(int codigo, String nombre,String ubicacion, int capacidadMax, boolean estado){
         if (capacidadMax <= 0){
-            throw IllegalArgumentException("La capacidad no es valida")
+            throw new IllegalArgumentException("La capacidad no es valida");
         }
         this.codigo = codigo;
         this.nombre = nombre;
@@ -21,11 +21,15 @@ public class Escenario{
         return codigo;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public String getUbicacion(){
         return ubicacion;
     }
 
-    public String getCapacidadmax(){
+    public int getCapacidad(){
         return capacidadMax;
     }
 
@@ -35,7 +39,7 @@ public class Escenario{
 
     //editar capacidad
 
-    public void setCapacidad(){
+    public void setCapacidad(int capacidad){
         if(capacidad<=0){
             throw new IllegalArgumentException("Capacidad que no es valida");
         }

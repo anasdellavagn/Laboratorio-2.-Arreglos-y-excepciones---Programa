@@ -4,7 +4,7 @@ public class Vista{
     private Scanner scanner;
 
     public Vista(){
-        scanner = new Scanner(System.int);
+        scanner = new Scanner(System.in);
     }
 
     public void mostrarMenu() {
@@ -39,7 +39,7 @@ public class Vista{
         return datos;
     }
 
-    public pedirDatosEscenario(){
+    public String[] pedirDatosEscenario(){
         String[] datos = new String[5];
 
         System.out.print("Codigo: ");
@@ -61,7 +61,7 @@ public class Vista{
     }
 
     public String[] pedirDatosArtista(){
-        String[] datos= new String[5]:
+        String[] datos= new String[5];
         System.out.print("Codigo: ");
         datos[0] = scanner.nextLine();
 
@@ -85,10 +85,10 @@ public class Vista{
             System.out.println("No hay escenario, no existe");
             return;
         }
-        System.out.println("Codigo: "+escenario.getCodigo());
-        System.out.println("Nombre: "+escenario.getNombre());
-        System.out.println("Ubic: "+escenario.getUbicacion());
-        System.out.println("Capacidad: "+escenario.getCapacidad());
+        System.out.println("Codigo: "+ escenario.getCodigo());
+        System.out.println("Nombre: "+ escenario.getNombre());
+        System.out.println("Ubic: "+ escenario.getUbicacion());
+        System.out.println("Capacidad: "+ escenario.getCapacidad());
         System.out.println("Estado: "+ escenario.getEstado());
     }
 
@@ -97,11 +97,10 @@ public class Vista{
             System.out.println("Artista no encontrado.");
             return;
         }
-        System.out.println("Codigo: "+artista.getCodigo());
-        System.out.println("Nombre: "+artista.getNombre());
-        System.out.println("Genero: "+artista.getGeneroMusical());
-        System.out.println("Ubicacion: "+artista.getUbicacion());
-        Sytem.out.println("Asistentes: "+artista.getAsistentes());  
+        System.out.println("Nombre: "+ artista.getNombreArtista());
+        System.out.println("Genero: "+ artista.getGeneroMusical());
+        System.out.println("Duracion: "+ artista.getDuracion());
+        System.out.println("Asistentes: "+ artista.getCantidadAsistentes());  
     }
     public void mostrarReporte(String reporte){
         System.out.println("\n-----------Reporte del festival----------------\n");
@@ -109,6 +108,29 @@ public class Vista{
     }
     public void mostrarMensaje(String mensaje){
         System.out.println(mensaje);
+    }
+    public int pedirOpcion() {
+        System.out.print("Ingrese una opcion: ");
+        int opcion = scanner.nextInt();
+        scanner.nextLine();
+        return opcion;
+    }
+    public String[] pedirDatosFestival() {
+        String[] datos = new String[3];
+
+        System.out.print("Nombre del festival: ");
+        datos[0] = scanner.nextLine();
+
+        System.out.print("Codigo de identificacion: ");
+        datos[1] = scanner.nextLine();
+
+        System.out.print("Nombre del coordinador: ");
+        datos[2] = scanner.nextLine();
+
+        return datos;
+    }
+    public void cerrarScanner() {
+        scanner.close();
     }
     
 }
